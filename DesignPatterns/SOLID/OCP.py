@@ -1,8 +1,5 @@
-from ast import And
-from curses.ascii import SI
 from enum import Enum
 
-from pip import main
 
 class Color(Enum):
     RED = 1
