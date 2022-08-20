@@ -42,6 +42,8 @@ class Specification:
     def is_satisfied(self, item):
         pass
 
+    def __and__(self, other):
+        return AndSpecification(self, other)
 
 class Filter:
     def filter(self, items, spec):
