@@ -1,0 +1,15 @@
+SOLID:
+
+S - Single Responsibility Principle
+O - Open Closed Principle
+L
+I
+D
+
+Single Responsibility Principle:
+---------------------------------
+A class should have just one purpose. This prevents developers from creating god objects.
+
+Open Closed Principle:
+----------------------
+Open for extension but closed for modification
