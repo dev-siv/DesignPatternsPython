@@ -3,7 +3,7 @@ SOLID:
 S - Single Responsibility Principle
 O - Open Closed Principle
 L - Liskov Substitution Principle
-I
+I - Interface Segregation Principle
 D
 
 Single Responsibility Principle:
@@ -13,3 +13,9 @@ A class should have just one purpose. This prevents developers from creating god
 Open Closed Principle:
 ----------------------
 Open for extension but closed for modification
+
+Interface Segregation Principle:
+-------------------------------
+Idea is here simple , you do not want to implement/link too many methods to an interface.
+
+
