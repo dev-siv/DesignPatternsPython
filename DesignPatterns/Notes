@@ -4,7 +4,7 @@ S - Single Responsibility Principle
 O - Open Closed Principle
 L - Liskov Substitution Principle
 I - Interface Segregation Principle
-D
+D - Dependency Inversion Principle
 
 Single Responsibility Principle:
 ---------------------------------
@@ -18,4 +18,7 @@ Interface Segregation Principle:
 -------------------------------
 Idea is here simple , you do not want to implement/link too many methods to an interface.
 
-
+Dependency Inversion Principle:
+-------------------------------
+High level modules or classes should not depend on low leve modules. Instead they should 
+depend on abstractions.
