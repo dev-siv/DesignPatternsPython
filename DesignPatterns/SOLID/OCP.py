@@ -1,5 +1,5 @@
 from enum import Enum
-
+from abc import ABC, abstractmethod
 
 class Color(Enum):
     RED = 1
@@ -82,6 +82,46 @@ class BetterFilter(Filter):
         for item in items:
             if spec.is_satisfied(item):
                 yield item
+
+
+"""
+Simpler example
+"""
+
+class Person:
+    def __init__(self, name) -> None:
+        self.name = name
+
+class PersonStorage:
+    def save_to_database(self, person):
+        print(f"Saving {person.name} to database")
+
+    def save_to_json(self, person):
+        print(f"Saving {person.name} to json")
+
+# now above class implemenation violates the open closed principle
+# so we have to change it.
+# what if we need to add another storage method?
+# we need to modify the existing class instead of extending it.
+class Storage:
+    @abstractmethod
+    def save(self, person):
+        pass
+
+class StorageDatabase(Storage):
+    def save(self, person):
+        print(f"Saving {person.name} to database")
+    
+class StorageJSON(Storage):
+    def save(self, person):
+        print(f"Saving {person.name} to json")
+
+class StorageXML(Storage):
+    def save(self, person):
+        print(f"Saving {person.name} to xml")
+
+
+
 
 if __name__ == "__main__":
     apple = Product("Apple", Color.GREEN, Size.SMALL)
