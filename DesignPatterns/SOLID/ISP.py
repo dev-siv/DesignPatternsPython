@@ -73,4 +73,17 @@ class OldFashionedFax(Fax):
     def fax(self, document):
         pass
 
+# if we still want a machine that can print and fax documents we can use the MultiFunctionMachine
+class MultiFunctionPrinter(Printer, Scanner, Fax):
+    @abstractmethod
+    def print(self, document):
+        pass
+
+    @abstractmethod
+    def fax(self, document):
+        pass
+    
+    @abstractmethod
+    def scan(self, document):
+        pass
 
