@@ -1,31 +1,36 @@
+from abc import ABC, abstractmethod
 
+class Bird(ABC):
+    @abstractmethod
+    def fly(self):
+        pass
 
-class Rectangle:
-    def __init__(self, height, width) -> None:
-        self._height = height
-        self._width = width
+class Parrot(Bird):
+    def fly(self):
+        print("Parrot can fly")
 
-    @property
-    def area(self):
-        return self._height * self._width
+class Ostrich(Bird):
+    def fly(self):
+        print("Ostric can't fly")
 
-    def __str__(self) -> str:
-        return f"Width: {self.width} Height: {self.height}"
+# OStrict class violates Liskov Substitution Principle
 
-    @property
-    def width(self):
-        return self._width
+class Bird(ABC):
+    pass
+
+class FlyingBird(Bird):
+    @abstractmethod
+    def fly(self):
+        pass
+
+class NonFlyingBird(Bird):
+    pass
+
+class Parrot(FlyingBird):
+    def fly(self):
+        print("Parrot can fly")
+
     
-    @width.setter
-    def width(self, value):
-        self._width = value
-    
-    @property
-    def height(self):
-        return self._height
+class Ostrich(NonFlyingBird):
+    pass
 
-    @height.setter
-    def height(self, value):
-        self._height = value
-
-        
